@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="G_Feedbacks" Id="{6ad7045b-1fd4-422b-966a-af7863eff004}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	fVelFeedback : LREAL;
+	fPosFeedback : LREAL; // These must come from a simulation/ROS
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

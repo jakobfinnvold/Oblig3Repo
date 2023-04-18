@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="G_MotionRef" Id="{1bd4eae2-ca26-4a48-abdf-3f51e7f027d9}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	stMotionParams : ST_MotionReferenceParams := (f_x0:= 0, f_v0 := 0, f_x_ref := 0.9, f_v_ref := 0.2, f_t0 := 0.0, f_tRamp := 4.0, f_tWait := 3.0, f_t := 0.0);
+	fCycleTime : LREAL := 0.01; 
+	fTimer : LREAL; 
+	bStart : BOOL;
+	bStop : BOOL; 
+	
+	fMotionGeneratorPos : LREAL;
+	fMotionGeneratorVel : LREAL;
+	bErrorMessage : BOOL; 
+	fControlledOutput : LREAL; 
+	
+	stOpenLoop : ST_OpenLoopSettings;
+	stClosedLoop : ST_ClosedLoopParams;
+	bStartOpenLoop : BOOL;
+	bStartClosedLoop : BOOL; 
+	
+	fFeedFwdSignal : LREAL;
+	fClosedLoopSignal : LREAL; 
+	fClosedLoopError : LREAL; 
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

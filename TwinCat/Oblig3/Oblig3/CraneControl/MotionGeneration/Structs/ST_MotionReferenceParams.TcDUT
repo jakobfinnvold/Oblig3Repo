@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_MotionReferenceParams" Id="{d6b8d9cf-50e6-472a-9275-347db255218a}">
+    <Declaration><![CDATA[TYPE ST_MotionReferenceParams :
+STRUCT
+	f_x0 : LREAL;
+	f_v0 : LREAL;
+	f_x_ref : LREAL;
+	f_v_ref : LREAL;
+	f_t0 : LREAL;
+	f_tRamp : LREAL;
+	f_tWait : LREAL;
+	f_t : LREAL; 
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

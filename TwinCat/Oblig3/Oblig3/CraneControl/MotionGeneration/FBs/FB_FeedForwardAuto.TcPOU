@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_FeedForwardAuto" Id="{6f66b99a-cf75-432c-82b9-43f8fa7c884e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_FeedForwardAuto
+VAR_INPUT
+	bEnable : BOOL;
+	fVelRef : LREAL;
+	stOpenLoopSettings : ST_OpenLoopSettings;
+END_VAR
+VAR_OUTPUT
+	fVelFeedFWD : LREAL; 
+END_VAR
+VAR
+	fTempOut : LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF fVelRef >= 0.0 THEN
+	fTempOut := stOpenLoopSettings.fBoreArea*fVelRef; // Flow to bore side
+ELSE
+	fTempOut := stOpenLoopSettings.fAnnulusArea * fVelRef;		// FLow to piston side
+END_IF
+
+IF bEnable THEN
+	fVelFeedFWD := (60000.0*fTempOut)/150.0;
+ELSE
+	fVelFeedFWD := 0.0;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

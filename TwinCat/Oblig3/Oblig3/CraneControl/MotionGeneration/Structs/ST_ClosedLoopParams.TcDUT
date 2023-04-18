@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_ClosedLoopParams" Id="{a2c531c6-3085-4a26-a61e-e4136ef8dea7}">
+    <Declaration><![CDATA[TYPE ST_ClosedLoopParams :
+STRUCT
+	fPgain : LREAL := 10.2;
+	fMaxError : LREAL := 0.02; 
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

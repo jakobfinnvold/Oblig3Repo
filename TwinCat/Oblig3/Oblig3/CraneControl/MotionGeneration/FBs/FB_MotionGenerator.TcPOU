@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_MotionGenerator" Id="{045252b8-7b3d-4b01-b2fb-c94007d63025}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MotionGenerator
+VAR_INPUT
+	stMotionParameters : ST_MotionReferenceParams; 
+	fTimer : LREAL; 
+END_VAR
+VAR_OUTPUT
+	fPosX : LREAL;
+	fVel : LREAL;
+	bError : BOOL; 
+END_VAR
+VAR
+	f_X_SP : LREAL;
+	f_vs : LREAL;
+	fSlopeExt : LREAL;
+	fSlopeRetr : LREAL; 
+	f_as : LREAL; 
+	f_sacc : LREAL; 
+	f_tHold : LREAL; 
+	f_t0 : LREAL;
+	f_t1 : LREAL;
+	f_t2 : LREAL;
+	f_t3 : LREAL;
+	f_t4 : LREAL;
+	f_t5 : LREAL;
+	f_t6 : LREAL;
+	f_t7 : LREAL;
+	f_x1 : LREAL;
+	f_x2 : LREAL;
+	f_x3 : LREAL;
+	f_x4 : LREAL;
+	f_x5 : LREAL; 
+	f_t : LREAL; 
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[f_X_SP := stMotionParameters.f_x_ref - stMotionParameters.f_x0;
+f_vs := stMotionParameters.f_v_ref;
+f_as := f_vs/stMotionParameters.f_tRamp;
+f_sacc := ((f_vs*f_vs) - (stMotionParameters.f_v0*stMotionParameters.f_v0))/f_as; 
+
+
+f_tHold := (f_x_SP-f_sacc)/f_vs;
+
+IF f_tHold < 0 THEN
+	bError := TRUE;
+ELSE
+	bError := FALSE;
+END_IF
+
+f_t:= fTimer; 
+f_t0 := stMotionParameters.f_t0;
+f_t1:=stMotionParameters.f_tRamp;
+f_t2:=f_tHold; 
+f_t3:=stMotionParameters.f_tRamp;
+f_t4:=stMotionParameters.f_tWait;
+f_t5:=f_t1;
+f_t6:=f_t2;
+f_t7:=f_t3;
+
+//x1 = x0 + v0*((t0+t1)-t0)-(slopeExt/t1)*((t0+t1)-t0)^2/2;
+//x2 = x1 + vs*((t0+t1+t2)-(t0+t1)); 
+//x4 = x_ref - v0*((t0+t1+t2+t3+t4+t5)-(t0+t1+t2+t3+t4))+(slopeRetr/t5)*((t0+t1+t2+t3+t4+t5)-(t0+t1+t2+t3+t4))^2/2; 
+//x5 = x4-vs*((t0+t1+t2+t3+t4+t5+t6)-(t0+t1+t2+t3+t4+t5));  
+
+f_x1 := stMotionParameters.f_x0 + stMotionParameters.f_v0*((f_t0 + f_t1)-f_t0) - (fSlopeExt/f_t1)*(((f_t0+f_t1)-f_t0)*((f_t0+f_t1)-f_t0))/2; 
+f_x2 := f_x1 + f_vs*((f_t0+f_t1+f_t2)-(f_t0+f_t1));
+f_x4 := stMotionParameters.f_x_ref - stMotionParameters.f_v0*((f_t0+f_t1+f_t2+f_t3+f_t4+f_t5)-(f_t0+f_t1+f_t2+f_t3+f_t4)) + (fSlopeRetr/f_t5)*(((f_t0+f_t1+f_t2+f_t3+f_t4+f_t5)-(f_t0+f_t1+f_t2+f_t3+f_t4))*((f_t0+f_t1+f_t2+f_t3+f_t4+f_t5)-(f_t0+f_t1+f_t2+f_t3+f_t4)))/2; 
+f_x5 := f_x4 - f_vs*((f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6)-(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5)); 
+
+
+IF bError THEN
+	fPosX := stMotionParameters.f_x0;
+	fVel := stMotionParameters.f_v0; 
+
+ELSIF f_t>=0 AND f_t<f_t0 THEN
+	fPosX:= stMotionParameters.f_x0; 
+	fVel := stMotionParameters.f_v0;
+
+ELSIF f_t>=f_t0 AND f_t<(f_t0+f_t1) THEN
+	fPosX := stMotionParameters.f_x0 + stMotionParameters.f_v0*(f_t-f_t0)-(fSlopeExt/f_t1)*((f_t-f_t0)*(f_t-f_t0))/2;
+	fVel := stMotionParameters.f_v0-(fSlopeExt/f_t1)*(f_t-f_t0);  
+
+ELSIF f_t>=(f_t0+f_t1) AND f_t<(f_t0+f_t1+f_t2) THEN
+	fPosX := f_x1 + f_vs*(f_t-(f_t0+f_t1)); 
+	fVel := f_vs; 
+
+ELSIF f_t>=(f_t0+f_t1+f_t2) AND f_t<(f_t0+f_t1+f_t2+f_t3) THEN
+	fPosX := f_x2+f_vs*(f_t-(f_t0+f_t1+f_t2))+(fSlopeExt/f_t3)*((f_t-(f_t0+f_t1+f_t2))*(f_t-(f_t0+f_t1+f_t2)))/2; 
+	fVel := f_vs+(fSlopeExt/f_t3)*(f_t-(f_t0+f_t1+f_t2));   
+
+ELSIF f_t>=(f_t0+f_t1+f_t2+f_t3) AND f_t<(f_t0+f_t1+f_t2+f_t3+f_t4) THEN
+	fPosX := stMotionParameters.f_x_ref;
+	fVel := stMotionParameters.f_v0;  
+
+ELSIF f_t>=(f_t0+f_t1+f_t2+f_t3+f_t4) AND f_t<(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5) THEN
+	fPosX := stMotionParameters.f_x_ref - stMotionParameters.f_v0*(f_t-(f_t0+f_t1+f_t2+f_t3+f_t4))+(fSlopeRetr/f_t5)*((f_t-(f_t0+f_t1+f_t2+f_t3+f_t4))*(f_t-(f_t0+f_t1+f_t2+f_t3+f_t4)))/2; 
+	fVel := stMotionParameters.f_v0+(fSlopeRetr/f_t5)*(f_t-(f_t0+f_t1+f_t2+f_t3+f_t4)); 
+    
+ELSIF f_t>=(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5) AND f_t<(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6) THEN
+	fPosX := f_x4-f_vs*(f_t-(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5));   
+	fVel := -f_vs;    
+
+ELSIF f_t>=(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6) AND f_t<(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6+f_t7) THEN
+	fPosX := f_x5-f_vs*(f_t-(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6))-(fSlopeRetr/f_t3)*((f_t-(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6))*(f_t-(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6)))/2;    
+	fVel := -f_vs-(fSlopeRetr/f_t3)*(f_t-(f_t0+f_t1+f_t2+f_t3+f_t4+f_t5+f_t6));    
+ 
+ELSE 
+	fPosX := stMotionParameters.f_x0;
+	fVel := stMotionParameters.f_v0; 
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

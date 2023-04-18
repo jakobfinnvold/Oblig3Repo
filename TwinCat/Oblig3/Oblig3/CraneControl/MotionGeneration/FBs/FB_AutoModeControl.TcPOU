@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_AutoModeControl" Id="{7cc6e40e-1d6b-4042-a1f7-5cdfded99b84}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AutoModeControl
+VAR_INPUT
+	bEnable : BOOL;
+	bStart : BOOL;
+	bStop : BOOL;
+	stMotionParams : ST_MotionReferenceParams;
+	stClosedLoopControl : ST_ClosedLoopParams;
+	stOpenLoopControl : ST_OpenLoopSettings;
+	fPosFeedback : LREAL; 
+END_VAR
+VAR_OUTPUT
+	fVelRef : LREAL;
+	fPosRef : LREAL;
+	fTime : LREAL;
+	fPosError : LREAL;
+	fCtrlOutput : LREAL;
+END_VAR
+VAR
+	fbClock : FB_Timer;
+	fbMotionRef : FB_MotionGenerator;
+	fbClosedLoop : FB_ClosedLoop;
+	fbOpenLoop : FB_FeedForwardAuto;
+	fCtrlTemp : LREAL; 
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bStart THEN
+	bEnable := TRUE; 
+END_IF
+
+fbClock(bStart := G_MotionRef.bStart,
+	bStop := G_MotionRef.bStop,
+	fCycleTime := G_MotionRef.fCycleTime,
+	fTime => G_MotionRef.fTimer); 
+	
+fbMotionRef(stMotionParameters := G_MotionRef.stMotionParams,
+	fTimer := G_MotionRef.fTimer,
+	fPosX => G_MotionRef.fMotionGeneratorPos,
+	fVel => G_MotionRef.fMotionGeneratorVel,
+	bError => G_MotionRef.bErrorMessage);
+
+fbOpenLoop(bEnable := G_MotionRef.bStart,
+	fVelRef := G_MotionRef.fMotionGeneratorVel,
+	stOpenLoopSettings := G_MotionRef.stOpenLoop,
+	fVelFeedFWD => G_MotionRef.fFeedFwdSignal); 
+	
+fbClosedLoop(bEnable := G_MotionRef.bStart,
+	fPosRef := G_MotionRef.fMotionGeneratorPos,
+	fPosFeedback := G_Feedbacks.fPosFeedback,
+	stClosedLoopParams := G_MotionRef.stClosedLoop,
+	stMotionParams := G_MotionRef.stMotionParams,
+	fClosedLoopPosition => G_MotionRef.fClosedLoopSignal,
+	fPositionError => G_MotionRef.fClosedLoopError);
+	
+IF bEnable THEN // This is also scaled to be between -1 and 1 to simulate a valve output
+	fCtrlTemp := LIMIT(-2.0, (fbOpenLoop.fVelFeedFWD + fbClosedLoop.fClosedLoopPosition), 2.0);
+	fCtrlOutput := fCtrlTemp * 60 * 3.1415/180; // full output = 60 degrees and vice verca
+ELSE
+	fCtrlOutput := 0;
+END_IF
+	
+	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

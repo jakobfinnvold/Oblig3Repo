@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{09667400-14fd-48b0-9895-e96e55090f7a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bActivateMotion : BOOL;
+	fVelRef : LREAL;
+	fPosRef : LREAL;
+	fPosMeas : LREAL; 
+	fPistonPressure : LREAL;
+	fRodPressure : LREAL; 
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[P_MotionGenerator(); 
+G_HMI.bStart := bActivateMotion;
+fVelRef := G_MotionRef.fMotionGeneratorVel;
+fPosRef := G_MotionRef.fMotionGeneratorPos;
+fPosMeas := fPosRef;//G_MotionRef.fControlledOutput;
+fPistonPressure := G_MotionRef.stOpenLoop.fAnnulusArea * fPosMeas;
+fRodPressure := G_MotionRef.stOpenLoop.fBoreArea * fPosMeas; 
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

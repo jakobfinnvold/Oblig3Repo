@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_MotionGenerator" Id="{7716fdcc-b9ff-4769-a16f-c8056ff3b22a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_MotionGenerator
+VAR
+	fbTime : FB_Timer;
+	fbGenerator : FB_MotionGenerator;
+	fbAutoMode : FB_AutoModeControl;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+G_MotionRef.bStart := G_HMI.bStart;
+G_MotionRef.bStop := G_HMI.bStop;
+G_MotionRef.bStartClosedLoop := G_HMI.bStartCL;
+G_MotionRef.bStartOpenLoop := G_HMI.bStartOL;
+
+//fbTime(bStart := G_MotionRef.bStart,
+//	bStop := G_MotionRef.bStop,
+//	fCycleTime := G_MotionRef.fCycleTime,
+//	fTime => G_MotionRef.fTimer);
+	
+//fbGenerator(
+// 	fTimer := G_MotionRef.fTimer,
+//	stMotionParameters := G_MotionRef.stMotionParams,
+//	fPosX => G_MotionRef.fMotionGeneratorPos,
+//	fVel => G_MotionRef.fMotionGeneratorVel,
+//	bError => G_MotionRef.bErrorMessage); 
+
+fbAutoMode(bStart := G_MotionRef.bStart,
+	bStop := G_MotionRef.bStop,
+	stMotionParams := G_MotionRef.stMotionParams,
+	stClosedLoopControl := G_MotionRef.stClosedLoop,
+	stOpenLoopControl := G_MotionRef.stOpenLoop,
+	fPosFeedback := G_Feedbacks.fPosFeedback,
+	fCtrlOutput => G_MotionRef.fControlledOutput); ]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
