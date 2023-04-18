@@ -1,0 +1,22 @@
+[2.331s] Invoking command in '/home/jakob/ros2_o3/src/joint_state_publisher/joint_state_publisher': PYTHONPATH=/home/jakob/ros2_o3/build/joint_state_publisher/prefix_override:/home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/joint_state_publisher build --build-base /home/jakob/ros2_o3/build/joint_state_publisher/build install --record /home/jakob/ros2_o3/build/joint_state_publisher/install.log --single-version-externally-managed
+[3.062s] running egg_info
+[3.063s] writing ../../../build/joint_state_publisher/joint_state_publisher.egg-info/PKG-INFO
+[3.071s] writing dependency_links to ../../../build/joint_state_publisher/joint_state_publisher.egg-info/dependency_links.txt
+[3.071s] writing entry points to ../../../build/joint_state_publisher/joint_state_publisher.egg-info/entry_points.txt
+[3.071s] writing requirements to ../../../build/joint_state_publisher/joint_state_publisher.egg-info/requires.txt
+[3.071s] writing top-level names to ../../../build/joint_state_publisher/joint_state_publisher.egg-info/top_level.txt
+[3.080s] reading manifest file '../../../build/joint_state_publisher/joint_state_publisher.egg-info/SOURCES.txt'
+[3.080s] adding license file 'LICENSE'
+[3.081s] writing manifest file '../../../build/joint_state_publisher/joint_state_publisher.egg-info/SOURCES.txt'
+[3.081s] running build
+[3.081s] running build_py
+[3.083s] running install
+[3.083s] running install_lib
+[3.089s] running install_data
+[3.090s] running install_egg_info
+[3.095s] removing '/home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages/joint_state_publisher-2.3.0-py3.10.egg-info' (and everything under it)
+[3.095s] Copying ../../../build/joint_state_publisher/joint_state_publisher.egg-info to /home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages/joint_state_publisher-2.3.0-py3.10.egg-info
+[3.096s] running install_scripts
+[3.152s] Installing joint_state_publisher script to /home/jakob/ros2_o3/install/joint_state_publisher/lib/joint_state_publisher
+[3.153s] writing list of installed files to '/home/jakob/ros2_o3/build/joint_state_publisher/install.log'
+[3.198s] Invoked command in '/home/jakob/ros2_o3/src/joint_state_publisher/joint_state_publisher' returned '0': PYTHONPATH=/home/jakob/ros2_o3/build/joint_state_publisher/prefix_override:/home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/joint_state_publisher build --build-base /home/jakob/ros2_o3/build/joint_state_publisher/build install --record /home/jakob/ros2_o3/build/joint_state_publisher/install.log --single-version-externally-managed

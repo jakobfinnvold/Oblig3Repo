@@ -1,0 +1,8 @@
+[0.825s] Invoking command in '/home/jakob/ros2_o3/build/ads': /usr/bin/cmake --build /home/jakob/ros2_o3/build/ads -- -j3 -l3
+[0.898s] [35m[1mConsolidate compiler generated dependencies of target ads[0m
+[0.936s] [ 80%] Built target ads
+[0.957s] [35m[1mConsolidate compiler generated dependencies of target AdsLibTest.bin[0m
+[0.970s] [35m[1mConsolidate compiler generated dependencies of target example.bin[0m
+[1.001s] [ 90%] Built target AdsLibTest.bin
+[1.007s] [100%] Built target example.bin
+[1.031s] Invoked command in '/home/jakob/ros2_o3/build/ads' returned '0': /usr/bin/cmake --build /home/jakob/ros2_o3/build/ads -- -j3 -l3

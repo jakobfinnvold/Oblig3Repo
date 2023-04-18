@@ -1,0 +1,41 @@
+[1.974s] Invoking command in '/home/jakob/ros2_o3/src/joint_state_publisher/joint_state_publisher_gui': AMENT_PREFIX_PATH=/home/jakob/ros2_o3/install/joint_state_publisher:${AMENT_PREFIX_PATH} PYTHONPATH=/home/jakob/ros2_o3/build/joint_state_publisher_gui/prefix_override:/home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages:/home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/joint_state_publisher_gui build --build-base /home/jakob/ros2_o3/build/joint_state_publisher_gui/build install --record /home/jakob/ros2_o3/build/joint_state_publisher_gui/install.log --single-version-externally-managed
+[2.714s] running egg_info
+[2.714s] creating ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info
+[2.714s] writing ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/PKG-INFO
+[2.715s] writing dependency_links to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/dependency_links.txt
+[2.715s] writing entry points to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/entry_points.txt
+[2.715s] writing requirements to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/requires.txt
+[2.715s] writing top-level names to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/top_level.txt
+[2.719s] writing manifest file '../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/SOURCES.txt'
+[2.721s] reading manifest file '../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/SOURCES.txt'
+[2.721s] adding license file 'LICENSE'
+[2.722s] writing manifest file '../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/SOURCES.txt'
+[2.722s] running build
+[2.722s] running build_py
+[2.723s] creating /home/jakob/ros2_o3/build/joint_state_publisher_gui/build
+[2.723s] creating /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib
+[2.723s] creating /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib/joint_state_publisher_gui
+[2.723s] copying joint_state_publisher_gui/flow_layout.py -> /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib/joint_state_publisher_gui
+[2.723s] copying joint_state_publisher_gui/joint_state_publisher_gui.py -> /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib/joint_state_publisher_gui
+[2.723s] copying joint_state_publisher_gui/__init__.py -> /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib/joint_state_publisher_gui
+[2.723s] running install
+[2.724s] running install_lib
+[2.724s] creating /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui
+[2.725s] copying /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib/joint_state_publisher_gui/flow_layout.py -> /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui
+[2.725s] copying /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib/joint_state_publisher_gui/joint_state_publisher_gui.py -> /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui
+[2.725s] copying /home/jakob/ros2_o3/build/joint_state_publisher_gui/build/lib/joint_state_publisher_gui/__init__.py -> /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui
+[2.728s] byte-compiling /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui/flow_layout.py to flow_layout.cpython-310.pyc
+[2.729s] byte-compiling /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui/joint_state_publisher_gui.py to joint_state_publisher_gui.cpython-310.pyc
+[2.730s] byte-compiling /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui/__init__.py to __init__.cpython-310.pyc
+[2.731s] running install_data
+[2.732s] creating /home/jakob/ros2_o3/install/joint_state_publisher_gui/share/ament_index
+[2.732s] creating /home/jakob/ros2_o3/install/joint_state_publisher_gui/share/ament_index/resource_index
+[2.732s] creating /home/jakob/ros2_o3/install/joint_state_publisher_gui/share/ament_index/resource_index/packages
+[2.732s] copying resource/joint_state_publisher_gui -> /home/jakob/ros2_o3/install/joint_state_publisher_gui/share/ament_index/resource_index/packages
+[2.732s] copying package.xml -> /home/jakob/ros2_o3/install/joint_state_publisher_gui/share/joint_state_publisher_gui
+[2.732s] running install_egg_info
+[2.738s] Copying ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info to /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui-2.3.0-py3.10.egg-info
+[2.739s] running install_scripts
+[2.793s] Installing joint_state_publisher_gui script to /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/joint_state_publisher_gui
+[2.793s] writing list of installed files to '/home/jakob/ros2_o3/build/joint_state_publisher_gui/install.log'
+[2.834s] Invoked command in '/home/jakob/ros2_o3/src/joint_state_publisher/joint_state_publisher_gui' returned '0': AMENT_PREFIX_PATH=/home/jakob/ros2_o3/install/joint_state_publisher:${AMENT_PREFIX_PATH} PYTHONPATH=/home/jakob/ros2_o3/build/joint_state_publisher_gui/prefix_override:/home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages:/home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/joint_state_publisher_gui build --build-base /home/jakob/ros2_o3/build/joint_state_publisher_gui/build install --record /home/jakob/ros2_o3/build/joint_state_publisher_gui/install.log --single-version-externally-managed

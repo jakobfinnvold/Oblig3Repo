@@ -1,0 +1,22 @@
+[1.939s] Invoking command in '/home/jakob/ros2_o3/src/joint_state_publisher/joint_state_publisher_gui': AMENT_PREFIX_PATH=/home/jakob/ros2_o3/install/joint_state_publisher:${AMENT_PREFIX_PATH} PYTHONPATH=/home/jakob/ros2_o3/build/joint_state_publisher_gui/prefix_override:/home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages:/home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/joint_state_publisher_gui build --build-base /home/jakob/ros2_o3/build/joint_state_publisher_gui/build install --record /home/jakob/ros2_o3/build/joint_state_publisher_gui/install.log --single-version-externally-managed
+[2.652s] running egg_info
+[2.653s] writing ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/PKG-INFO
+[2.653s] writing dependency_links to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/dependency_links.txt
+[2.653s] writing entry points to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/entry_points.txt
+[2.653s] writing requirements to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/requires.txt
+[2.653s] writing top-level names to ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/top_level.txt
+[2.659s] reading manifest file '../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/SOURCES.txt'
+[2.659s] adding license file 'LICENSE'
+[2.660s] writing manifest file '../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info/SOURCES.txt'
+[2.661s] running build
+[2.661s] running build_py
+[2.661s] running install
+[2.661s] running install_lib
+[2.665s] running install_data
+[2.666s] running install_egg_info
+[2.670s] removing '/home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui-2.3.0-py3.10.egg-info' (and everything under it)
+[2.670s] Copying ../../../build/joint_state_publisher_gui/joint_state_publisher_gui.egg-info to /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages/joint_state_publisher_gui-2.3.0-py3.10.egg-info
+[2.671s] running install_scripts
+[2.720s] Installing joint_state_publisher_gui script to /home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/joint_state_publisher_gui
+[2.720s] writing list of installed files to '/home/jakob/ros2_o3/build/joint_state_publisher_gui/install.log'
+[2.768s] Invoked command in '/home/jakob/ros2_o3/src/joint_state_publisher/joint_state_publisher_gui' returned '0': AMENT_PREFIX_PATH=/home/jakob/ros2_o3/install/joint_state_publisher:${AMENT_PREFIX_PATH} PYTHONPATH=/home/jakob/ros2_o3/build/joint_state_publisher_gui/prefix_override:/home/jakob/ros2_o3/install/joint_state_publisher_gui/lib/python3.10/site-packages:/home/jakob/ros2_o3/install/joint_state_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/joint_state_publisher_gui build --build-base /home/jakob/ros2_o3/build/joint_state_publisher_gui/build install --record /home/jakob/ros2_o3/build/joint_state_publisher_gui/install.log --single-version-externally-managed

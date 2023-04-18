@@ -1,0 +1,4 @@
+Invoking command in '/home/jakob/ros2_o3/build/ads': /usr/bin/cmake /home/jakob/ros2_o3/src/ADS -DCMAKE_INSTALL_PREFIX=/home/jakob/ros2_o3/install/ads
+Invoked command in '/home/jakob/ros2_o3/build/ads' returned '0': /usr/bin/cmake /home/jakob/ros2_o3/src/ADS -DCMAKE_INSTALL_PREFIX=/home/jakob/ros2_o3/install/ads
+Invoking command in '/home/jakob/ros2_o3/build/ads': /usr/bin/cmake --build /home/jakob/ros2_o3/build/ads -- -j3 -l3
+Invoked command in '/home/jakob/ros2_o3/build/ads' returned '0': /usr/bin/cmake --build /home/jakob/ros2_o3/build/ads -- -j3 -l3

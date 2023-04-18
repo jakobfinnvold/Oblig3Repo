@@ -1,0 +1,5 @@
+[1.463s] Invoking command in '/home/jakob/ros2_o3/build/ads': /usr/bin/cmake --build /home/jakob/ros2_o3/build/ads -- -j3 -l3
+[1.622s] [ 80%] Built target ads
+[1.750s] [ 90%] Built target AdsLibTest.bin
+[1.770s] [100%] Built target example.bin
+[1.823s] Invoked command in '/home/jakob/ros2_o3/build/ads' returned '0': /usr/bin/cmake --build /home/jakob/ros2_o3/build/ads -- -j3 -l3

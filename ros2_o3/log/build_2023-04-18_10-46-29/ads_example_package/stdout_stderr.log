@@ -1,0 +1,88 @@
+-- Found ament_cmake: 1.3.3 (/home/jakob/ros2_humble/install/ament_cmake/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.3 (/home/jakob/ros2_humble/install/rclcpp/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.4 (/home/jakob/ros2_humble/install/rosidl_generator_c/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.4 (/home/jakob/ros2_humble/install/rosidl_adapter/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.4 (/home/jakob/ros2_humble/install/rosidl_generator_cpp/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_introspection_c;rosidl_typesupport_fastrtps_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_introspection_cpp;rosidl_typesupport_fastrtps_cpp
+-- Found rmw_implementation_cmake: 6.1.1 (/home/jakob/ros2_humble/install/rmw_implementation_cmake/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.2 (/home/jakob/ros2_humble/install/rmw_fastrtps_cpp/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclpy: 3.3.7 (/home/jakob/ros2_humble/install/rclpy/share/rclpy/cmake)
+-- Found sensor_msgs: 4.2.3 (/home/jakob/ros2_humble/install/sensor_msgs/share/sensor_msgs/cmake)
+-- Found ament_lint_auto: 0.12.5 (/home/jakob/ros2_humble/install/ament_lint_auto/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/jakob/ros2_o3/src/ads_example_package/include>;/home/jakob/ros2_o3/src/ads_example_package/../ADS/AdsLib
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jakob/ros2_o3/build/ads_example_package
+[35m[1mConsolidate compiler generated dependencies of target ads_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/ads_node.dir/src/ads_node.cpp.o[0m
+[01m[K/home/jakob/ros2_o3/src/ads_example_package/src/ads_node.cpp:[m[K In constructor ‘[01m[Kcraneads::AdsHandler::AdsHandler(AmsNetId, std::string)[m[K’:
+[01m[K/home/jakob/ros2_o3/src/ads_example_package/src/ads_node.cpp:134:22:[m[K [01;35m[Kwarning: [m[K‘[01m[Kcraneads::AdsHandler::ads_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  134 |         AdsVariables [01;35m[Kads_[m[K;
+      |                      [01;35m[K^~~~[m[K
+[01m[K/home/jakob/ros2_o3/src/ads_example_package/src/ads_node.cpp:48:46:[m[K [01;35m[Kwarning: [m[K  base ‘[01m[Krclcpp::Node[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   48 |             , ads_(route_), Node("AdsHandler"[01;35m[K)[m[K { }
+      |                                              [01;35m[K^[m[K
+[01m[K/home/jakob/ros2_o3/src/ads_example_package/src/ads_node.cpp:44:18:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   44 |         explicit [01;35m[KAdsHandler[m[K(const AmsNetId remoteNetId, const std::string remoteIpV4)
+      |                  [01;35m[K^~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable ads_node[0m
+[100%] Built target ads_node
+-- Install configuration: ""
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/images
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/images/visual.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/images/multipleshapes.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/images/myfirst.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/images/origins.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/images/materials.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/images/flexible.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/launch
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/launch/display.launch.py
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/meshes
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/meshes/frame_URDF.STL
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/meshes/l_finger_tip.dae
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/meshes/boom_URDF.STL
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/meshes/l_finger_tip_color.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/meshes/l_finger.dae
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/meshes/l_finger_color.png
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/rviz
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/rviz/urdf.rviz
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/02-multipleshapes.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/01-myfirst.urdf
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/green_crane.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/03-origins.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/04-materials.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/05-visual.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/07-physics.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/06-flexible.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/simple_green_crane.urdf
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/urdf/08-macroed.urdf.xacro
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/lib/ads_example_package/ads_node
+-- Set runtime path of "/home/jakob/ros2_o3/install/ads_example_package/lib/ads_example_package/ads_node" to ""
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/lib/ads_example_package/crane_controller.py
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ament_index/resource_index/package_run_dependencies/ads_example_package
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ament_index/resource_index/parent_prefix_path/ads_example_package
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/environment/ament_prefix_path.dsv
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/environment/path.dsv
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/local_setup.bash
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/local_setup.sh
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/local_setup.zsh
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/local_setup.dsv
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/package.dsv
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ament_index/resource_index/packages/ads_example_package
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/cmake/ads_example_packageConfig.cmake
+-- Up-to-date: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/cmake/ads_example_packageConfig-version.cmake
+-- Installing: /home/jakob/ros2_o3/install/ads_example_package/share/ads_example_package/package.xml
